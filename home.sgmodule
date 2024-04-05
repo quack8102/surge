@@ -1,0 +1,12 @@
+
+#!name=home.com
+#!desc=After enabling the module, you may access the homepage by accessing http://home.com in your browser. The URL will always redirect to the 192.168.30.2.
+
+[General]
+force-http-engine-hosts=%APPEND% home.com, www.home.com
+
+[MITM]
+hostname = %INSERT% home.com, www.home.com
+
+[URL Rewrite]
+^https?://(|www\.)home\.com http://192.168.30.2 302
